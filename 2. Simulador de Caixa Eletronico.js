@@ -2,11 +2,8 @@ let nomeCorrentista = prompt("Qual o seu nome? ")
 let tipoConta = parseInt(prompt("Qual o seu tipo de conta? 1- Conta corrente, 2- Conta Poupanca, 3- Conta Salario "))
 let saldoAtual = parseFloat(prompt("Qual seu saldo atual na conta? "))
 let operacao = parseInt(prompt("Qual a operacao desejada? 1- Saque, 2- Deposito, 3- Consultar saldo "))
-operacao == 3 ? console.log(`Seu saldo na conta e R$${saldoAtual.toFixed(2)}.`) : true ;
-let valorOperacao = parseFloat(prompt("Qual o valor da operacao? "))
+let valorOperacao = operacao !== 3 ? parseFloat(prompt("Qual o valor da operacao? ")) : true ;
 let limiteSaque
-
-valorOperacao.toFixed(2)
 
 switch(tipoConta){
     case 1:
@@ -20,9 +17,8 @@ switch(tipoConta){
     break;
     default:
     console.log("Tipo de conta invalido.")
+    break;
 }
-
-limiteSaque.toFixed(2)
 
 switch(operacao){
     case 1:
@@ -36,6 +32,7 @@ switch(operacao){
     break;
     default:
     console.log("Operacao invalida.")
+    break;
 }
 
 switch(true){
@@ -58,9 +55,9 @@ switch(true){
     break;
     
     case (operacao == "Consultar Saldo"):
-        console.log(saldoAtual.toFixed(2))
+        console.log(`Seu saldo na conta e R$${saldoAtual.toFixed(2)}.`)
     break;
 }
 
-
-saldoAtual > 0 ? console.log("Saldo Positivo.") : console.log("Saldo zerado/negativo.");
+console.log(`Correntista: ${nomeCorrentista}`)
+saldoAtual > 0 ? console.log("Saldo Positivo.") : console.log("Saldo zerado/negativo.")
