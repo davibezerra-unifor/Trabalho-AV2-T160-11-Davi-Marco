@@ -5,7 +5,9 @@ let operacao = parseInt(prompt("Qual a operacao desejada? 1- Saque, 2- Deposito,
 let valorOperacao = operacao !== 3 ? parseFloat(prompt("Qual o valor da operacao? ")) : true ;
 let limiteSaque
 
-switch(tipoConta){
+
+switch(tipoConta)
+{
     case 1:
         limiteSaque = 3000
     break;
@@ -20,7 +22,8 @@ switch(tipoConta){
     break;
 }
 
-switch(operacao){
+switch(operacao)
+{
     case 1:
         operacao = "Saque"
     break;
@@ -35,7 +38,8 @@ switch(operacao){
     break;
 }
 
-switch(true){
+switch(true)
+{
     case (operacao == "Saque" && valorOperacao <= saldoAtual && valorOperacao > limiteSaque):
         console.log("Saque negado --- valor acima do limite diario")
     break;
